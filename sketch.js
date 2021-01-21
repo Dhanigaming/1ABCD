@@ -20,7 +20,7 @@ function preload(){
 
 function setup(){
   
-  createCanvas(5,8);
+  createCanvas(windowWidth,windowHeight);
 // Moving background
 path=createSprite(width/2,200);
 path.addImage(pathImg);
@@ -50,7 +50,7 @@ function draw() {
   boy.collide(edges);
   
   //code to reset the background
-  if(path.y > 400 ){
+  if(path.y > height ){
     path.y = height/2;
   }
   
@@ -76,8 +76,8 @@ function draw() {
         gameState=END;
         
         boy.addAnimation("SahilRunning",endImg);
-        boy.x=200;
-        boy.y=300;
+        boy.x=width/2;
+        boy.y=height/2;
         boy.scale=0.6;
         
         cashG.destroyEach();
